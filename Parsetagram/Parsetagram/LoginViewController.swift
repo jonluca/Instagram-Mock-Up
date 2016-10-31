@@ -41,9 +41,7 @@ class LoginViewController: UIViewController {
                     
                 }
             } else {
-                let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
-                let vc : InstaViewController = mainStoryboard.instantiateViewController(withIdentifier: "vcMainLogin") as! InstaViewController
-                self.present(vc, animated: true, completion: nil)
+                self.performSegue(withIdentifier: "login", sender: nil)
                 // display view controller that needs to shown after successful login
             }
         }
@@ -70,9 +68,7 @@ class LoginViewController: UIViewController {
                 }
                 // Show the errorString somewhere and let the user try again.
             } else {
-                let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
-                let vc : InstaViewController = mainStoryboard.instantiateViewController(withIdentifier: "vcMainLogin") as! InstaViewController
-                self.present(vc, animated: true, completion: nil)
+                self.performSegue(withIdentifier: "login", sender: nil)
                 // Hooray! Let them use the app now.
             }
         }

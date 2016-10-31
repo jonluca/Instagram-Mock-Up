@@ -1,5 +1,5 @@
 //
-//  InstaViewController.swift
+//  CaptureViewController.swift
 //  Parsetagram
 //
 //  Created by JonLuca De Caro on 10/31/16.
@@ -8,26 +8,10 @@
 
 import UIKit
 
-class InstaViewController: UIViewController {
+class CaptureViewController: UIViewController {
 
-    @IBOutlet weak var tabBar: UITabBar!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        
-        let home = storyboard.instantiateViewController(withIdentifier: "homeView") as! UINavigationController;
-        let homeVc = home.topViewController as! HomeViewController
-        homeVc.tabBarItem.title = "Home"
-        
-        let tab = UITabBarController()
-        tab.viewControllers = [homeVc]
-        
-        let window = UIWindow(frame: UIScreen.main.bounds)
-        
-        window.rootViewController = tab
-        window.makeKeyAndVisible()
 
         // Do any additional setup after loading the view.
     }

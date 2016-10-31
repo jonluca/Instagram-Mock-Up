@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		08A820B11DC7F0DB0080C243 /* InstaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A820B01DC7F0DB0080C243 /* InstaViewController.swift */; };
+		08A820B41DC7FA160080C243 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A820B31DC7FA160080C243 /* HomeViewController.swift */; };
+		08A820B61DC7FA220080C243 /* CaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A820B51DC7FA220080C243 /* CaptureViewController.swift */; };
+		08A820B81DC7FA2A0080C243 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A820B71DC7FA2A0080C243 /* ProfileViewController.swift */; };
+		08A820BA1DC7FAB90080C243 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A820B91DC7FAB90080C243 /* PostTableViewCell.swift */; };
 		08C0507C1DBECD770032AD6A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C0507B1DBECD770032AD6A /* AppDelegate.swift */; };
 		08C0507E1DBECD770032AD6A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C0507D1DBECD770032AD6A /* ViewController.swift */; };
 		08C050811DBECD770032AD6A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 08C0507F1DBECD770032AD6A /* Main.storyboard */; };
@@ -19,6 +23,10 @@
 
 /* Begin PBXFileReference section */
 		08A820B01DC7F0DB0080C243 /* InstaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstaViewController.swift; sourceTree = "<group>"; };
+		08A820B31DC7FA160080C243 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		08A820B51DC7FA220080C243 /* CaptureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaptureViewController.swift; sourceTree = "<group>"; };
+		08A820B71DC7FA2A0080C243 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		08A820B91DC7FAB90080C243 /* PostTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		08C050781DBECD770032AD6A /* Parsetagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Parsetagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		08C0507B1DBECD770032AD6A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		08C0507D1DBECD770032AD6A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -44,6 +52,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		08A820B21DC7FA010080C243 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				08C050921DBED3760032AD6A /* LoginViewController.swift */,
+				08A820B01DC7F0DB0080C243 /* InstaViewController.swift */,
+				08A820B31DC7FA160080C243 /* HomeViewController.swift */,
+				08A820B51DC7FA220080C243 /* CaptureViewController.swift */,
+				08A820B71DC7FA2A0080C243 /* ProfileViewController.swift */,
+				08A820B91DC7FAB90080C243 /* PostTableViewCell.swift */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
 		08C0506F1DBECD770032AD6A = {
 			isa = PBXGroup;
 			children = (
@@ -65,14 +86,13 @@
 		08C0507A1DBECD770032AD6A /* Parsetagram */ = {
 			isa = PBXGroup;
 			children = (
+				08A820B21DC7FA010080C243 /* View Controllers */,
 				08C0507B1DBECD770032AD6A /* AppDelegate.swift */,
 				08C0507D1DBECD770032AD6A /* ViewController.swift */,
 				08C0507F1DBECD770032AD6A /* Main.storyboard */,
 				08C050821DBECD770032AD6A /* Assets.xcassets */,
 				08C050841DBECD770032AD6A /* LaunchScreen.storyboard */,
 				08C050871DBECD770032AD6A /* Info.plist */,
-				08C050921DBED3760032AD6A /* LoginViewController.swift */,
-				08A820B01DC7F0DB0080C243 /* InstaViewController.swift */,
 			);
 			path = Parsetagram;
 			sourceTree = "<group>";
@@ -124,7 +144,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0800;
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = "JonLuca De Caro";
 				TargetAttributes = {
 					08C050771DBECD770032AD6A = {
@@ -219,8 +239,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08A820B41DC7FA160080C243 /* HomeViewController.swift in Sources */,
+				08A820B61DC7FA220080C243 /* CaptureViewController.swift in Sources */,
 				08C050931DBED3760032AD6A /* LoginViewController.swift in Sources */,
+				08A820BA1DC7FAB90080C243 /* PostTableViewCell.swift in Sources */,
 				08C0507E1DBECD770032AD6A /* ViewController.swift in Sources */,
+				08A820B81DC7FA2A0080C243 /* ProfileViewController.swift in Sources */,
 				08A820B11DC7F0DB0080C243 /* InstaViewController.swift in Sources */,
 				08C0507C1DBECD770032AD6A /* AppDelegate.swift in Sources */,
 			);
@@ -266,6 +290,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -315,6 +340,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;

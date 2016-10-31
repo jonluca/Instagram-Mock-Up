@@ -1,5 +1,5 @@
 //
-//  InstaViewController.swift
+//  ProfileViewController.swift
 //  Parsetagram
 //
 //  Created by JonLuca De Caro on 10/31/16.
@@ -7,27 +7,12 @@
 //
 
 import UIKit
+import Parse
 
-class InstaViewController: UIViewController {
+class ProfileViewController: UIViewController, UINavigationControllerDelegate  {
 
-    @IBOutlet weak var tabBar: UITabBar!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        
-        let home = storyboard.instantiateViewController(withIdentifier: "homeView") as! UINavigationController;
-        let homeVc = home.topViewController as! HomeViewController
-        homeVc.tabBarItem.title = "Home"
-        
-        let tab = UITabBarController()
-        tab.viewControllers = [homeVc]
-        
-        let window = UIWindow(frame: UIScreen.main.bounds)
-        
-        window.rootViewController = tab
-        window.makeKeyAndVisible()
 
         // Do any additional setup after loading the view.
     }
@@ -35,6 +20,13 @@ class InstaViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+
+    @IBAction func logOut(_ sender: Any) {
+        PFUser.logOutInBackground()
+        self.performSegue(withIdentifier: "logout", sender: nil)
+
     }
     
 
