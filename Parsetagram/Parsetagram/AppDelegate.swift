@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,9 +16,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        Parse.setApplicationId("YpDZrCPA68Phd9FqiVXX1sZ5AgoD5wEk4FMn9p8o", clientKey: "JlqanetJccKLwbduN7YwO7ryU7nCvUsjCThmMOrP");
         // Override point for customization after application launch.
-        if PFUser.currentUser() != nil {
+        
+        // Override point for customization after application launch.
+        if PFUser.current() != nil {
             // if there is a logged in user then load the home view controller
+            let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc : InstaViewController = mainStoryboard.instantiateViewController(withIdentifier: "vcMainLogin") as! InstaViewController
+            self.window = UIWindow(frame: UIScreen.main.bounds)
+            self.window?.rootViewController = vc
+            self.window?.makeKeyAndVisible()
         }
         return true
     }
