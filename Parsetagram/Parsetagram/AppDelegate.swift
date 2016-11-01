@@ -16,7 +16,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        Parse.setApplicationId("YpDZrCPA68Phd9FqiVXX1sZ5AgoD5wEk4FMn9p8o", clientKey: "JlqanetJccKLwbduN7YwO7ryU7nCvUsjCThmMOrP");
+        Parse.initialize(
+            with: ParseClientConfiguration(block: { (configuration:ParseMutableClientConfiguration) -> Void in
+                configuration.applicationId = "myAppId"
+                configuration.clientKey = nil  // set to nil assuming you have not set clientKey
+                configuration.server = "https://scopejonluca.herokuapp.com/parse"
+            })
+        )
         // Override point for customization after application launch.
         
         // Override point for customization after application launch.

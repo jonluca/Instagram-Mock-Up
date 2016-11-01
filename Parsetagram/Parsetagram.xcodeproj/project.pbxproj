@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0812F9851DC8174D00684513 /* instaPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0812F9841DC8174D00684513 /* instaPost.swift */; };
 		08A820B11DC7F0DB0080C243 /* InstaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A820B01DC7F0DB0080C243 /* InstaViewController.swift */; };
 		08A820B41DC7FA160080C243 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A820B31DC7FA160080C243 /* HomeViewController.swift */; };
 		08A820B61DC7FA220080C243 /* CaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A820B51DC7FA220080C243 /* CaptureViewController.swift */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0812F9841DC8174D00684513 /* instaPost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = instaPost.swift; sourceTree = "<group>"; };
 		08A820B01DC7F0DB0080C243 /* InstaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstaViewController.swift; sourceTree = "<group>"; };
 		08A820B31DC7FA160080C243 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		08A820B51DC7FA220080C243 /* CaptureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaptureViewController.swift; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 				08C0507B1DBECD770032AD6A /* AppDelegate.swift */,
 				08C0507D1DBECD770032AD6A /* ViewController.swift */,
 				08C0507F1DBECD770032AD6A /* Main.storyboard */,
+				0812F9841DC8174D00684513 /* instaPost.swift */,
 				08C050821DBECD770032AD6A /* Assets.xcassets */,
 				08C050841DBECD770032AD6A /* LaunchScreen.storyboard */,
 				08C050871DBECD770032AD6A /* Info.plist */,
@@ -247,6 +250,7 @@
 				08C050931DBED3760032AD6A /* LoginViewController.swift in Sources */,
 				08A820BA1DC7FAB90080C243 /* PostTableViewCell.swift in Sources */,
 				08C0507E1DBECD770032AD6A /* ViewController.swift in Sources */,
+				0812F9851DC8174D00684513 /* instaPost.swift in Sources */,
 				08A820BC1DC811140080C243 /* PostCell.swift in Sources */,
 				08A820B81DC7FA2A0080C243 /* ProfileViewController.swift in Sources */,
 				08A820B11DC7F0DB0080C243 /* InstaViewController.swift in Sources */,

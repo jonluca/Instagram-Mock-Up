@@ -15,6 +15,8 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     var posts:[PFObject] = []
 
     let HeaderViewIdentifier = "topView"
+    var isMore = false
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +27,20 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         refreshControl.addTarget(self, action: #selector(refreshControlGetPosts(_:)), for: UIControlEvents.valueChanged)
         tableView.insertSubview(refreshControl, at: 0)
         tableView.register(UITableViewHeaderFooterView.self, forHeaderFooterViewReuseIdentifier: HeaderViewIdentifier)
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        // Calculate the position of one screen length before the bottom of the results
+        let scrollViewContentHeight = tableView.contentSize.height
+        let scrollOffsetThreshold = scrollViewContentHeight - tableView.bounds.size.height
+        
+        // When the user has scrolled past the threshold, start requesting
+        if(scrollView.contentOffset.y > scrollOffsetThreshold && tableView.isDragging) {
+            isMore = true
+            
+            // ... Code to load more results ...
+            getPictures()
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -57,20 +73,17 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         }
         return cell
     }
+    
     func getPictures()
     {
-        let query = PFQuery(className: "Post")
-        query.includeKey("author")
-        query.order(byDescending: "createdAt")
-        query.findObjectsInBackground {(objects, error) -> Void in
-            if error == nil {
-                if let objects = objects {
-                    self.posts = objects
-                    self.tableView.reloadData()
-                    
-                }
+        let query = PFQuery(className: "instaPost")
+        query.findObjectsInBackground { (returned, error) -> Void in
+            if let returned = returned {
+                self.posts = returned
+                self.tableView.reloadData()
+                // do something with the array of object returned by the call
             } else {
-                print("not working")
+                print(error?.localizedDescription ?? "asdf")
             }
         }
     }
