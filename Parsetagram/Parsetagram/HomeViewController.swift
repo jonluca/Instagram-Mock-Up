@@ -11,40 +11,69 @@ import Parse
 
 class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
+    @IBOutlet weak var tableView: UITableView!
+    var posts:[PFObject] = []
+
+    let HeaderViewIdentifier = "topView"
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        tableView.dataSource = self
+        tableView.delegate = self
+        
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(refreshControlGetPosts(_:)), for: UIControlEvents.valueChanged)
+        tableView.insertSubview(refreshControl, at: 0)
+        tableView.register(UITableViewHeaderFooterView.self, forHeaderFooterViewReuseIdentifier: HeaderViewIdentifier)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return 1
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "messageCell") as! PostTableViewCell
-//        if let temp = self.messages[indexPath.row] as? PFObject{
-//            cell.messageBody.text = (self.messages[indexPath.row] as! PFObject).object(forKey: "text") as! String?
-//            if let tempUser = (self.messages[indexPath.row] as! PFObject).object(forKey: "userProf") as? String? {
-//                //print(tempUser.username)
-//                cell.userLable.text = tempUser
-//            }
-//        }
-        
-        return cell          }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return posts.count;
     }
-    */
+    func refreshControlGetPosts(_ refreshControl: UIRefreshControl)
+    {
+        getPictures()
+        self.tableView.reloadData()
+        refreshControl.endRefreshing()
+    }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "postCell", for: indexPath) as! PostCell
+        
+        let textPfObject = self.posts[indexPath.section]
+        if let stringText = textPfObject.value(forKey: "caption") {
+            
+            cell.caption.text = stringText as? String
+            cell.instaImage.file = textPfObject["media"] as? PFFile
+            cell.instaImage.loadInBackground()
+            
+        }
+        return cell
+    }
+    func getPictures()
+    {
+        let query = PFQuery(className: "Post")
+        query.includeKey("author")
+        query.order(byDescending: "createdAt")
+        query.findObjectsInBackground {(objects, error) -> Void in
+            if error == nil {
+                if let objects = objects {
+                    self.posts = objects
+                    self.tableView.reloadData()
+                    
+                }
+            } else {
+                print("not working")
+            }
+        }
+    }
+
 
 }

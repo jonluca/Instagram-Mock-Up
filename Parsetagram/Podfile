@@ -8,4 +8,7 @@ target 'Parsetagram' do
   # Pods for Parsetagram
   pod 'AFNetworking'
   pod 'Parse'
+  pod 'ParseUI'
+  pod 'MBProgressHUD'
+  
 end
